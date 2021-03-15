@@ -9,41 +9,30 @@ import { HomeModule } from './home/home.module';
 import { RouterModule, Routes} from '@angular/router';
 import { NavbarComponent } from './home/navbar/navbar.component';
 import { MainContentComponent } from './home/main-content/main-content.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { ProductDetailComponent } from './catalog/product-detail/product-detail.component';
 
 const routes: Routes = [
   { 
-    path: 'Navbar',
+    path: 'navbar',
     component: NavbarComponent
   },
   {
-    path: 'Main-Content',
+    path: 'main-content',
     component: MainContentComponent
   },
   {
-    path: 'home',
-    // component: HomeComponent
- }, 
- {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'home'
- }, 
- {
-    path: 'login',
-    // component: LoginComponent
- }, 
- {  
+    path: 'product-detail',
+    component: ProductDetailComponent
+  }, 
+  {  
     path: 'products',
-    // component: ProductListComponent
- },
- {
-    path: 'products/:id',
-    // component: ProductDetailComponent
- },
+    component: ProductListComponent
+  },
   {
-    path: '**',
-    // component: PageNotFoundComponent
- }
+    path: 'products/:id',
+    component: ProductDetailComponent
+  },
 ]
 
 @NgModule({
