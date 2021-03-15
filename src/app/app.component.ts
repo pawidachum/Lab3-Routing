@@ -1,10 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ProductListComponent } from './product-list/product-list.component';
+import { BackendService } from './backend.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'Lab3-Routing';
+
+export class AppComponent implements OnInit{
+  // @ViewChild('productList',{static:true})
+  // productList: ProductListComponent;
+
+  ngOnInit():void{
+    // this.productList.products = this.backendService.getProducts(); 
+  }
+
+  constructor(private backendService: BackendService) {}
+  
+
+  title = 'Lab4-Recipe2';
 }
